@@ -3,9 +3,9 @@
 <head>
  
  <!-- Libs CSS -->
-  <link rel="stylesheet" href="<?echo $this->config->item('base_url')?>/public/assets/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $this->config->item('base_url')?>/public/assets/libs/bootstrap/css/bootstrap.min.css">
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?echo $this->config->item('base_url')?>/public/assets/styles/betting.css"> 
+  <link rel="stylesheet" href="<?php echo $this->config->item('base_url')?>/public/assets/styles/betting.css"> 
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hello: <?echo $name?></a>
+          <a class="navbar-brand" href="#">Hello: <?php echo $name?></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -33,7 +33,7 @@
   </header>
   <div>
     <div style="width: 100%">
-        <h1 style="">第<?echo $board["game"]?>盤<?echo $board["num"]?>局 </h1>
+        <h1 style="">第<?php echo $board["game"]?>盤<?php echo $board["num"]?>局 </h1>
     </div>
 
 
@@ -45,7 +45,7 @@
       <table class="table table-striped table-bordered" border="1" id="table1">
         <thead>
           <tr>
-            <th>第<?echo $board["game"]?>盤<?echo $board["num"]?>局</th>
+            <th>第<?echo $board["game"]?>盤<?php echo $board["num"]?>局</th>
             <th>莊</th>
             <th>閒</th>
             <th>和</th>
@@ -66,7 +66,7 @@
       <table class="table table-striped table-bordered" border="1" id="table2">
         <thead>
           <tr>
-            <th>第<?echo $board["game"]?>盤<?echo $board["num"]?>局</th>
+            <th>第<?php echo $board["game"]?>盤<?php echo $board["num"]?>局</th>
             <th>本局分</th>
             <th>剩餘分</th>
             <th>初始分</th>
@@ -176,12 +176,12 @@
   <!--Footer end-->
 </body>
 
-<script src="<?echo $this->config->item('base_url')?>/public/assets/libs/jquery-1.11.3/jquery-1.11.3.min.js"></script>
-<script src="<?echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-<script src="<?echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/localization/messages_zh_TW.min.js"></script>
-<script src="<?echo $this->config->item('base_url')?>/public/js/blockUI.js"></script>
-<script src="<?echo $this->config->item('base_url')?>/public/js/html2canvas.js"></script>
-<script src="<?echo $this->config->item('base_url')?>/public/js/FileSaver.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/assets/libs/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/localization/messages_zh_TW.min.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/js/blockUI.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/js/html2canvas.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/js/FileSaver.js"></script>
 <script>
 
 $( document ).ready(function() {
@@ -199,14 +199,14 @@ function selectmember()
   $total3 = 0;
   ?>
   <?foreach ($data as $key => $value) {?>
-    var txt1 = "<tr id=\"<?echo $value['id']."a"?>\"><td><?echo $value['nickname']?></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>";
-    var txt2 = "<tr id=\"<?echo $value['id']?>\"><td><?echo $value['nickname']?></td><td>0</td><td><?$point = empty($value['end_point'])? "0" : $value['end_point'];echo $point;$total1 = $total1+$point;?></td><td><?$point = empty($value['start_point'])? "0" : $value['start_point'];echo $point;$total2 = $total2+$point;?></td><td><?$point = empty($value['lose'])? "0" : $value['lose'];echo $point;$total3 = $total3+$point;?></td></tr>";
+    var txt1 = "<tr id=\"<?php echo $value['id']."a"?>\"><td><?php echo $value['nickname']?></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>";
+    var txt2 = "<tr id=\"<?php echo $value['id']?>\"><td><?php echo $value['nickname']?></td><td>0</td><td><?php $point = empty($value['end_point'])? "0" : $value['end_point'];echo $point;$total1 = $total1+$point;?></td><td><?php $point = empty($value['start_point'])? "0" : $value['start_point'];echo $point;$total2 = $total2+$point;?></td><td><?php $point = empty($value['lose'])? "0" : $value['lose'];echo $point;$total3 = $total3+$point;?></td></tr>";
     $("#table1 tbody").append(txt1);
     $("#table2 tbody").append(txt2); 
   <?}?>
-  var txttotal = "<tr id=\"total\" style=\"background-color:#5599FF\"><td>總人數（<?echo $total;?>）</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>"
+  var txttotal = "<tr id=\"total\" style=\"background-color:#5599FF\"><td>總人數（<?php echo $total;?>）</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>"
   $("#table1 tbody").append(txttotal);
-  var txttotal2 = "<tr id=\"total2\" style=\"background-color:#5599FF\"><td>總人數（<?echo $total;?>）</td><td>0</td><td><?echo $total1;?></td><td><?echo $total2;?></td><td><?echo $total3;?></td></tr>"
+  var txttotal2 = "<tr id=\"total2\" style=\"background-color:#5599FF\"><td>總人數（<?php echo $total;?>）</td><td>0</td><td><?php echo $total1;?></td><td><?php echo $total2;?></td><td><?php echo $total3;?></td></tr>"
   $("#table2 tbody").append(txttotal2);
  
 }
@@ -287,11 +287,11 @@ $("#picturebtn").click(function(){
   }
 });
 $(".member").click(function() {
-  location.href = "<?echo $this->config->item('base_url')?>/Betting/member";
+  location.href = "<?php echo $this->config->item('base_url')?>/Betting/member";
     // window.open("<?echo $this->config->item('base_url')?>/Betting/member",'member' ,'scrollbars');
   });
 $(".history").click(function() {
-  location.href = "<?echo $this->config->item('base_url')?>/Betting/history";
+  location.href = "<?php echo $this->config->item('base_url')?>/Betting/history";
   });
 $("#submitnextbbtn").click(function()
 {
@@ -358,7 +358,7 @@ $("#count").click(function(e){
           i++;
         }
       });
-      $.post("<?echo $this->config->item('base_url')?>/Betting/countresult",{infoary: aa, bet1: bet1, bet2: bet2, bet3: bet3}, function(data) {
+      $.post("<?php echo $this->config->item('base_url')?>/Betting/countresult",{infoary: aa, bet1: bet1, bet2: bet2, bet3: bet3}, function(data) {
         if(data.status == "no") {
           setTimeout($.unblockUI, 1000);
           alert("請輸入正確代號");
@@ -437,7 +437,7 @@ $("#insertinfo").click(function(e){
 });
 function postuserform(count){
   count ++;
-  $.post("<?echo $this->config->item('base_url')?>/Betting/bet", $('#BettingForm').serialize(), 
+  $.post("<?php echo $this->config->item('base_url')?>/Betting/bet", $('#BettingForm').serialize(), 
       function(data) {
         switch (data.status) {
           case 'ok':
@@ -694,7 +694,7 @@ $("#submitsavebtn").click(function(e) {
        cc['3'] = $('#total').find('td:eq(4)').text();
        cc['4'] = $('#total').find('td:eq(5)').text();
 
-    $.post("<?echo $this->config->item('base_url')?>/Betting/saveboard",{board: aa, num:<?echo $board["num"]?>, total:cc}, function(data) {
+    $.post("<?php echo $this->config->item('base_url')?>/Betting/saveboard",{board: aa, num:<?echo $board["num"]?>, total:cc}, function(data) {
       if(data == "ok")
       {
         setTimeout($.unblockUI, 1000);
@@ -733,7 +733,7 @@ $("#submitresetbtn").click(function() {
             opacity: .5,
             color: '#fff'
     } });
-    $.post("<?echo $this->config->item('base_url')?>/Betting/setboard",{type:"reset"}, function(data) {
+    $.post("<?php echo $this->config->item('base_url')?>/Betting/setboard",{type:"reset"}, function(data) {
       setTimeout($.unblockUI, 1000);
       alert("重置成功");
       window.location.reload();
@@ -755,7 +755,7 @@ $("#submitnextgbtn").click(function() {
             opacity: .5,
             color: '#fff'
     } });
-    $.post("<?echo $this->config->item('base_url')?>/Betting/setboard",{type:"next"}, function(data) {
+    $.post("<?php echo $this->config->item('base_url')?>/Betting/setboard",{type:"next"}, function(data) {
       if(data == "ok")
       {
         setTimeout($.unblockUI, 1000);
@@ -770,7 +770,7 @@ $("#submitnextgbtn").click(function() {
 });
 $('.loginout').on('click', function() {
   if (confirm('確定要登出嗎？')) {
-    document.location.href="<?echo $this->config->item('base_url')?>/welcome/logout";
+    document.location.href="<?php echo $this->config->item('base_url')?>/welcome/logout";
   }
 });
 </script>

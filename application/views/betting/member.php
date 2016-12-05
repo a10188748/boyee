@@ -3,11 +3,11 @@
 <head>
  
  <!-- Libs CSS -->
-  <link rel="stylesheet" href="<?echo $this->config->item('base_url')?>/public/assets/libs/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?echo $this->config->item('base_url')?>/public/assets/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo $this->config->item('base_url')?>/public/assets/libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo $this->config->item('base_url')?>/public/assets/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <!-- Custom CSS -->
-  <link rel="stylesheet" href="<?echo $this->config->item('base_url')?>/public/assets/styles/common.css">
+  <link rel="stylesheet" href="<?php echo $this->config->item('base_url')?>/public/assets/styles/common.css">
 </head>
 <body>
 
@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Hello: <?echo $name?></a>
+          <a class="navbar-brand" href="#">Hello: <?php echo $name?></a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
@@ -125,9 +125,9 @@
   </form>
 </div>
 
-<script src="<?echo $this->config->item('base_url')?>/public/assets/libs/jquery-1.11.3/jquery-1.11.3.min.js"></script> 
-  <script src="<?echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-  <script src="<?echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/localization/messages_zh_TW.min.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/assets/libs/jquery-1.11.3/jquery-1.11.3.min.js"></script> 
+  <script src="<?php echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+  <script src="<?php echo $this->config->item('base_url')?>/public/assets/libs/jquery-validation-1.14.0/dist/localization/messages_zh_TW.min.js"></script>
 
 <script type="text/javascript">
 	
@@ -147,7 +147,7 @@ $.blockUI({ css: {
             color: '#fff'
     } });
 
-    $.post("<?echo $this->config->item('base_url')?>/Betting/selectusercount", {name:x}, function(data) {
+    $.post("<?php echo $this->config->item('base_url')?>/Betting/selectusercount", {name:x}, function(data) {
       console.log(data);
       setTimeout($.unblockUI, 500);
           if(data.point == null) { 
@@ -208,7 +208,7 @@ $("#deleteuserbtn").click(function(e){
             opacity: .5,
             color: '#fff'
     } });
-        $.post("<?echo $this->config->item('base_url')?>/Betting/deleteuser", $('#MemberForm').serialize(), function(data) {
+        $.post("<?php echo $this->config->item('base_url')?>/Betting/deleteuser", $('#MemberForm').serialize(), function(data) {
           setTimeout($.unblockUI, 500);
           // console.log($('#MemberForm').serialize());
           switch (data) {
@@ -248,7 +248,7 @@ $("#deleteuserbtn").click(function(e){
             opacity: .5,
             color: '#fff'
     } });
-     $.post("<?echo $this->config->item('base_url')?>/Betting/insertuser", $('#MemberForm').serialize(), function(data) {
+     $.post("<?php echo $this->config->item('base_url')?>/Betting/insertuser", $('#MemberForm').serialize(), function(data) {
       setTimeout($.unblockUI, 500);
      switch (data) {
         case 'ok':
@@ -288,7 +288,7 @@ $("#deleteuserbtn").click(function(e){
             opacity: .5,
             color: '#fff'
     } });
-  	$.post("<?echo $this->config->item('base_url')?>/Betting/insertuserpoint/", $('#MemberPointForm').serialize(), function(data) {
+  	$.post("<?php echo $this->config->item('base_url')?>/Betting/insertuserpoint/", $('#MemberPointForm').serialize(), function(data) {
       setTimeout($.unblockUI, 500);
      switch (data) {
         case 'ok':
@@ -327,7 +327,7 @@ $("#deleteuserbtn").click(function(e){
             opacity: .5,
             color: '#fff'
     } });
-  	$.post("<?echo $this->config->item('base_url')?>/Betting/deleteuserpoint/", $('#MemberPointForm').serialize(), function(data) {
+  	$.post("<?php echo $this->config->item('base_url')?>/Betting/deleteuserpoint/", $('#MemberPointForm').serialize(), function(data) {
       setTimeout($.unblockUI, 500);
      switch (data) {
         case 'ok':
@@ -345,7 +345,7 @@ $("#deleteuserbtn").click(function(e){
   	}
   });
  $(".betting").click(function(){
-    location.href = "<?echo $this->config->item('base_url')?>/Betting/index";
+    location.href = "<?php echo $this->config->item('base_url')?>/Betting/index";
  });
 
  // 直接修改剩餘金
@@ -374,7 +374,7 @@ $("#deleteuserbtn").click(function(e){
             opacity: .5,
             color: '#fff'
     } });
-  $.post("<?echo $this->config->item('base_url')?>/Betting/setmembercount", $('#selectcount').serialize(), function(data) {
+  $.post("<?php echo $this->config->item('base_url')?>/Betting/setmembercount", $('#selectcount').serialize(), function(data) {
     setTimeout($.unblockUI, 500);
     switch (data) {
     case 'ok':
@@ -393,7 +393,7 @@ $("#deleteuserbtn").click(function(e){
  });
 
  $(".history").click(function() {
-  location.href = "<?echo $this->config->item('base_url')?>/Betting/history";
+  location.href = "<?php echo $this->config->item('base_url')?>/Betting/history";
   });
  // 修改會員名稱
  $("#editmemberbtn").click(function(e){
@@ -420,7 +420,7 @@ if($("#MemberSelectFrom").valid()){
             opacity: .5,
             color: '#fff'
     }});
-  $.post("<?echo $this->config->item('base_url')?>/Betting/editmembername", $('#MemberSelectFrom').serialize(), function(data) {
+  $.post("<?php echo $this->config->item('base_url')?>/Betting/editmembername", $('#MemberSelectFrom').serialize(), function(data) {
     switch (data) {
       case 'ok':
         alert("修改成功");
@@ -438,6 +438,6 @@ if($("#MemberSelectFrom").valid()){
 });
 </script>
 </body>
-<script src="<?echo $this->config->item('base_url')?>/public/js/blockUI.js"></script>
+<script src="<?php echo $this->config->item('base_url')?>/public/js/blockUI.js"></script>
 
 </html>
