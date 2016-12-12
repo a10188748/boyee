@@ -198,12 +198,12 @@ function selectmember()
   $total2 = 0;
   $total3 = 0;
   ?>
-  <?foreach ($data as $key => $value) {?>
+  <?php foreach ($data as $key => $value) {?>
     var txt1 = "<tr id=\"<?php echo $value['id']."a"?>\"><td><?php echo $value['nickname']?></td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>";
     var txt2 = "<tr id=\"<?php echo $value['id']?>\"><td><?php echo $value['nickname']?></td><td>0</td><td><?php $point = empty($value['end_point'])? "0" : $value['end_point'];echo $point;$total1 = $total1+$point;?></td><td><?php $point = empty($value['start_point'])? "0" : $value['start_point'];echo $point;$total2 = $total2+$point;?></td><td><?php $point = empty($value['lose'])? "0" : $value['lose'];echo $point;$total3 = $total3+$point;?></td></tr>";
     $("#table1 tbody").append(txt1);
     $("#table2 tbody").append(txt2); 
-  <?}?>
+  <?php }?>
   var txttotal = "<tr id=\"total\" style=\"background-color:#5599FF\"><td>總人數（<?php echo $total;?>）</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>"
   $("#table1 tbody").append(txttotal);
   var txttotal2 = "<tr id=\"total2\" style=\"background-color:#5599FF\"><td>總人數（<?php echo $total;?>）</td><td>0</td><td><?php echo $total1;?></td><td><?php echo $total2;?></td><td><?php echo $total3;?></td></tr>"
