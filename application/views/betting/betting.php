@@ -692,7 +692,7 @@ $("#submitsavebtn").click(function(e) {
        cc['3'] = $('#total').find('td:eq(4)').text();
        cc['4'] = $('#total').find('td:eq(5)').text();
 
-    $.post("<?php echo $this->config->item('base_url')?>/Betting/saveboard",{board: aa, num:<?echo $board["num"]?>, total:cc}, function(data) {
+    $.post("<?php echo $this->config->item('base_url')?>/Betting/saveboard",{board: aa, num:<?php echo $board["num"]?>, total:cc}, function(data) {
       if(data == "ok")
       {
         setTimeout($.unblockUI, 1000);
