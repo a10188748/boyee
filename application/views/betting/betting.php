@@ -534,11 +534,6 @@ counttotal();
   // $("#total").find('td:eq(3)').text(total3);
   // $("#total").find('td:eq(4)').text(total4);
   // $("#total").find('td:eq(5)').text(total5);
-
-
-
-  
-
 }
 $("#submitcancelbbtn").click(function(e){
   e.preventDefault();
