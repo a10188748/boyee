@@ -53,7 +53,7 @@
     <div style="width: 20%;float: left">
     結束日期
       <input type="text" id="calendar_input_end" readonly="">
-      <span><img id="calendar_icon2" src="<?echo $this->config->item('base_url')?>/public/dhtmlxSuite/image/calendar.png" border="0"></span>
+      <span><img id="calendar_icon2" src="<?php echo $this->config->item('base_url')?>/public/dhtmlxSuite/image/calendar.png" border="0"></span>
     </div>
     <div style=" width: 20%;float: left ;">
     <a id="selectbtn" class="btn btn-primary btn-block" href="#" title="搜尋" style="height: 26px;line-height:13px;font-size: 14px;">搜尋</a>
