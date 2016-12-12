@@ -192,7 +192,7 @@ $("#OpenForm").on('submit', function(e){
 });
 function selectmember()
 {
-  <?
+  <?php
   $total = count($data);
   $total1 = 0;
   $total2 = 0;
@@ -221,9 +221,8 @@ function selectmember()
       }
 
       function editColumn(e) {
-
+      
         var target = $(e.target);
-
         if (target.index() == 0) return;
         
         if (target.find('input').length) return;
@@ -235,7 +234,6 @@ function selectmember()
         input.focus().on('blur keypress', function(e) {
 
           if (e.type == 'keypress' && e.which != 13) return;
-          
           var newValue = $(e.target).val() ? $(e.target).val() : 0;
           newValue = parseFloat(newValue);
           target.empty().text(newValue);
